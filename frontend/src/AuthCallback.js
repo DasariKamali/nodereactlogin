@@ -4,7 +4,6 @@ const AuthCallback = () => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
-
     if (code) {
       fetch(`${process.env.REACT_APP_BACKEND_URL}/api/auth/exchange-token`, {
         method: 'POST',
@@ -20,8 +19,6 @@ const AuthCallback = () => {
         .catch(error => console.error('Error:', error));
     }
   }, []);
-
   return <div>Handling Authentication Callback...</div>;
 };
-
 export default AuthCallback;
